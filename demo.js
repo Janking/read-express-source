@@ -2,6 +2,10 @@ var express = require('./lib/express');
 
 var app = express();
 
-require('http').createServer(function(req,res){
-    console.log(res)
-}).listen(3000)
+app.set('view engine', 'html');
+
+app.engine('html', require('hbs').__express);
+
+app.render('./',function(){
+
+})
